@@ -1,5 +1,5 @@
 # ./lib/event_manager.rb
-# require "csv"
+ require "csv"
 puts "EventManager initialized."
 
 ##   Read entire file
@@ -58,10 +58,38 @@ puts "EventManager initialized."
 
 ##  Same as above but with each_with_index
 
-lines = File.readlines "event_attendees.csv"
-lines.each_with_index do |line, index|
-  next if index == 0
-  columns = line.split(",")
-  name = columns[2]
-  puts name
-end
+# lines = File.readlines "event_attendees.csv"
+# lines.each_with_index do |line, index|
+#   next if index == 0
+#   columns = line.split(",")
+#   name = columns[2]
+#   puts name
+# end
+
+
+
+##  Using CSV.open
+
+# contents = CSV.open "event_attendees.csv", headers: true
+# contents.each do |row|
+#    name = row[2]
+#   puts name
+# end
+
+## Accessing columns be their names
+
+# contents = CSV.open "event_attendees.csv", headers: true, header_converters: :symbol
+# contents.each do |row|
+#   name = row[:first_name]
+#   puts name
+# end
+
+
+##   Display zip codes of all attendees
+
+# contents = CSV.open "event_attendees.csv", headers: true, header_converters: :symbol
+# contents.each do |row|
+#   name = row[:first_name]
+#   zipcode = row[:zipcode]
+#   puts "#{name} #{zipcode}"
+# end

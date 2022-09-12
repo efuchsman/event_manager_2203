@@ -1,5 +1,5 @@
 # ./lib/event_manager.rb
-#  require "csv"
+ require "csv"
 # puts "EventManager initialized."
 
 ##   Read entire file
@@ -132,7 +132,7 @@
 
 ## Move Clean Zip Codes to a Method
 
-require 'csv'
+
 
 # def clean_zipcode(zipcode)
 #   if zipcode.nil?
